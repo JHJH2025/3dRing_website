@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { easing } from "maath";
 import { useFrame } from "@react-three/fiber";
-import { Shadow } from "@react-three/drei";
+import { RandomizedLight, AccumulativeShadows } from "@react-three/drei";
 
 import BlenderItem from "./BlenderItem";
 
@@ -11,13 +11,16 @@ const Backdrop = ()=>{
     //const alphaMap = BlenderItem
 
     return(
-        <directionalLight
-            position = {[0,2,3]}
-            intensity={0.5}
-            color={0xAAFF00}
-            castShadow={true}//showdow not showing, need plane?
-        >
-        </directionalLight>
+        <AccumulativeShadows 
+        rotateY={Math.PI / 4 }>
+            <RandomizedLight 
+            amount={8} 
+            radius={10} 
+            ambient={0.5} 
+            position={[5, 5, -10]} 
+            bias={0.001}/>
+        </AccumulativeShadows>
+        
         
         // <SpotLight
         //     distance={5}
