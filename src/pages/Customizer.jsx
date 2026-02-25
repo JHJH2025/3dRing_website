@@ -20,12 +20,14 @@ const Customizer = () => {
          {!snap.intro && (
             <>  
                 {/* {console.log('not on home page')} */}
-                <motion.div key="custom">
+                <motion.div 
+                key="custom"
+                className="absolute top-0 left-5 z-10 ">
                     <div className="flex items-center min-h-screen">
                         <div className="editortabs-container tabs glassmorphism">
                             {EditorTabs.map(
                                 (tab) => (
-                                    // console.log(tab.name, tab),
+                                    //console.log(tab.name, tab),
                                     <Tab
                                     key={tab.name}
                                     tab={tab}
@@ -54,7 +56,7 @@ const Customizer = () => {
                 {...slideAnimation('up')}>
                     {FilterTabs.map(
                                 (tab) => (
-                                    console.log(tab.name, tab),
+                                    //console.log(tab.name, tab),
                                     <Tab
                                     key={tab.name}
                                     tab={tab}

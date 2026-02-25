@@ -1,9 +1,19 @@
 import React from "react";  
+import { useSnapshot } from "valtio";
+import state from "../store";
 
-const Tab = ()=>{
+
+const Tab = (tab)=>{
+    const snap = useSnapshot(state);
     return(
-        <div>
-            Tab
+        <div
+        key = {tab.name}
+        >
+            {/* edit all tabs here */}
+           
+            <img
+            src = {tab.icon}
+            />
         </div>
     )
 }

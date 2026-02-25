@@ -11,15 +11,13 @@ const Backdrop = ()=>{
     //const alphaMap = BlenderItem
 
     return(
-        <AccumulativeShadows 
-        rotateY={Math.PI / 4 }>
-            <RandomizedLight 
-            amount={8} 
-            radius={10} 
-            ambient={0.5} 
-            position={[5, 5, -10]} 
-            bias={0.001}/>
-        </AccumulativeShadows>
+        
+        <RandomizedLight 
+        amount={8} 
+        radius={10} 
+        ambient={0.5} 
+        position={[5, 5, -10]} 
+        bias={0.001}/>
         
         
         // <SpotLight
