@@ -10,6 +10,7 @@ import {downloadCanvasToImage, reader} from '../config/helpers';
 import{EditorTabs, FilterTabs, DecalTypes} from '../config/constants';
 import { fadeAnimation, slideAnimation } from "../config/motion";
 import { AIPicker, ColorPicker, Tab, FilePicker, CustomButton } from "../components";
+import { SketchPicker } from "react-color";
 
 const Customizer = () => {
     const snap = useSnapshot(state)
@@ -32,7 +33,7 @@ const Customizer = () => {
                                     key={tab.name}
                                     tab={tab}
                                     icon={tab.icon}
-                                    handleClick={()=>{}}
+                                    handleClick={()=>{handleTabClick}}
                                     />
                                 )
                             )}

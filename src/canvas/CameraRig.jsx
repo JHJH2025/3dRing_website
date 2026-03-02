@@ -37,11 +37,6 @@ const CameraRig = ({children})=>{
     })
     
 
-
-
-
-
-
     return (
         <group ref={group}>
             {children}

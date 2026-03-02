@@ -4,6 +4,7 @@ import { Environment, Center } from "@react-three/drei";
 import Backdrop from "./Backdrop";
 import BlenderItem from "./BlenderItem";
 import CameraRig from "./CameraRig";
+import CustomList from "./CustomList";
 
 //import Floor from "./Floor";
 
@@ -25,6 +26,7 @@ const CanvasModel = () =>{
                 <Center>
                     <BlenderItem />
                         {/* <Floor/> */}
+                    <CustomList/>
                 </Center>
             </CameraRig>
         </Canvas>
