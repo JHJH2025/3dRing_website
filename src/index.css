@@ -5,7 +5,7 @@
   @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
 }
 .editortabs-container{
-   @apply w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4;
+   @apply w-96 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4;
 }
 
 .glassmorphism {
@@ -18,4 +18,21 @@
 .app {
   /* so this (h-screen) fix the canvas size not taking full screen */
   @apply relative w-full h-screen overflow-hidden;
+}
+
+@font-face {
+  font-family: 'BrotherSignature';
+  src: url('../src/assets/BrotherSignature-7BWnK.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.customlist-text{
+  @apply xl:text-[4rem] text-[3rem] text-[#3b3b3b];
+  font-family: 'BrotherSignature', cursive;
+}
+.colorGroup{
+  @apply text-base font-sans decoration-red-50;
+}
+.colorSelection{
+  @apply appearance-none w-4 h-4 border-2 bg-gray-50 rounded-lg;
 }

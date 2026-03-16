@@ -9,8 +9,9 @@ import{ download } from '../assets';
 import {downloadCanvasToImage, reader} from '../config/helpers';
 import{EditorTabs, FilterTabs, DecalTypes} from '../config/constants';
 import { fadeAnimation, slideAnimation } from "../config/motion";
-import { AIPicker, ColorPicker, Tab, FilePicker, CustomButton } from "../components";
+import { AIPicker, ColorPicker, Tab, FilePicker, CustomButton, CustomList } from "../components";
 import { SketchPicker } from "react-color";
+
 
 const Customizer = () => {
     const snap = useSnapshot(state)
@@ -23,10 +24,10 @@ const Customizer = () => {
                 {/* {console.log('not on home page')} */}
                 <motion.div 
                 key="custom"
-                className="absolute top-0 left-5 z-10 ">
-                    <div className="flex items-center min-h-screen">
-                        <div className="editortabs-container tabs glassmorphism">
-                            {EditorTabs.map(
+                className="absolute top-0 right-5 z-10 min-w-1/2 ">
+                    <div className="flex items-center min-h-screen ">
+                        <div className="editortabs-container tabs glassmorphism min-h-screen">
+                            {/* {EditorTabs.map(
                                 (tab) => (
                                     //console.log(tab.name, tab),
                                     <Tab
@@ -35,8 +36,10 @@ const Customizer = () => {
                                     icon={tab.icon}
                                     handleClick={()=>{handleTabClick}}
                                     />
+
                                 )
-                            )}
+                            )} */}
+                            <CustomList/>
 
                         </div>
                     </div>
@@ -64,6 +67,7 @@ const Customizer = () => {
                                     isFilterTab=""
                                     isActiveTab=""
                                     handleClick={()=>{}}
+                                    customStyles="px-10 py-20"
                                     />
                                 )
                             )}
