@@ -15,7 +15,11 @@ const BlenderItem = () => {
     const {camera} = useThree();
 
     //force react to update. && Change Ring Metal color
-    useFrame((state,delta)=>easing.dampC(materials.gold_white.color,snap.color, 0.25, delta ));
+    useFrame((_,delta)=>{
+        easing.dampC(materials.gold_white.color,snap.metalColor, 0.25, delta )
+        easing.dampC(materials.Gem_Pk_Material.color,snap.gemStoneColor, 0.25, delta );
+        //console.log("pk color:", materials.Gem_Pk_Material.color, "snap color", gemStoneColors)
+    });
     const stateString = JSON.stringify(snap);
 
     //var for customize logo
@@ -24,12 +28,11 @@ const BlenderItem = () => {
     
     //method to check layers of the gltf object
     // useEffect(() => {
-    //     console.log('\n=== NODES ===');
-    //     console.log(nodes);
-    //     console.log('\n=== MATERIALS ===');
-    //     console.log(materials);  
+    // //     console.log('\n=== NODES ===');
+    // //     console.log(nodes);
+    // //   console.log('\n=== MATERIALS ===');
+    //  console.log(stateString);  
     // });
-    
     const logMeshPositions = () => {
         console.log('FlowerTop:', flowerTopRef.current.position);
         console.log('Gem:', gemRef.current.position);
@@ -51,6 +54,7 @@ const BlenderItem = () => {
         window.logMeshPositions = logMeshPositions;
         window.logCamera = logCamera;
         window.checkLogo = checkLogo;
+       
     }, []);
     //call function in windows:indow.logMeshPositions()
     return (

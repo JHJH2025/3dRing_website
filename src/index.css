@@ -30,6 +30,9 @@
   @apply xl:text-[4rem] text-[3rem] text-[#3b3b3b];
   font-family: 'BrotherSignature', cursive;
 }
+.customlist-h2{
+  @apply  m-2
+}
 .colorGroup{
   @apply text-base font-sans decoration-red-50;
 }

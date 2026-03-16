@@ -9,7 +9,7 @@ import{ download } from '../assets';
 import {downloadCanvasToImage, reader} from '../config/helpers';
 import{EditorTabs, FilterTabs, DecalTypes} from '../config/constants';
 import { fadeAnimation, slideAnimation } from "../config/motion";
-import { AIPicker, ColorPicker, Tab, FilePicker, CustomButton, CustomList } from "../components";
+import { AIPicker, Tab, FilePicker, CustomButton, CustomList } from "../components";
 import { SketchPicker } from "react-color";
 
 
@@ -24,8 +24,7 @@ const Customizer = () => {
                 {/* {console.log('not on home page')} */}
                 <motion.div 
                 key="custom"
-                className="absolute top-0 right-5 z-10 min-w-1/2 ">
-                    <div className="flex items-center min-h-screen ">
+                className="absolute top-0 right-5 z-10 min-w-1/2 lg:w-1/3 ">
                         <div className="editortabs-container tabs glassmorphism min-h-screen">
                             {/* {EditorTabs.map(
                                 (tab) => (
@@ -40,8 +39,6 @@ const Customizer = () => {
                                 )
                             )} */}
                             <CustomList/>
-
-                        </div>
                     </div>
                 </motion.div>
                             

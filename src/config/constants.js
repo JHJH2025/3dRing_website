@@ -18,11 +18,11 @@ export const EditorTabs = [
 export const gemStoneColors = [
   {
     name: "green",
-    colorHex:'#50C878',
+    colorHex:'#8DB600',
   },
   {
     name: "yellow",
-    colorHex: '#FFED29',
+    colorHex: '#FFFF8A',
   },
  
   {
@@ -31,7 +31,7 @@ export const gemStoneColors = [
   },
   {
     name: "blue",
-    colorHex: '	#0013de',
+    colorHex: '#0013de',
   },
   {
     name: "purple",
@@ -43,6 +43,26 @@ export const gemStoneColors = [
     colorHex: '#ff1493',
   },
 ];
+export const metalColors = [
+  {
+    name: "lilac",
+    colorHex: '#fcc3fa',
+  },
+  {
+    name: "silver",
+    colorHex: '#e9e6e6',
+  },
+  
+  {
+    name: "gold",
+    colorHex: '#E5CF87',
+  },
+  {
+    name: "rosegold",
+    colorHex: '#eaa99b',
+  },
+  
+]
 
 export const FilterTabs = [
   {
