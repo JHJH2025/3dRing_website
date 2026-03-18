@@ -5,7 +5,8 @@
   @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
 }
 .editortabs-container{
-   @apply w-96 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4;
+  /* the customized list */
+   @apply w-full rounded-lg flex flex-col items-center py-8 outline;
 }
 
 .glassmorphism {
@@ -17,7 +18,7 @@
 }
 .app {
   /* so this (h-screen) fix the canvas size not taking full screen */
-  @apply relative w-full h-screen overflow-hidden;
+  @apply relative w-full h-screen overflow-auto;
 }
 
 @font-face {

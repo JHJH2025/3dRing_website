@@ -24,8 +24,8 @@ const Customizer = () => {
                 {/* {console.log('not on home page')} */}
                 <motion.div 
                 key="custom"
-                className="absolute top-0 right-5 z-10 min-w-1/2 lg:w-1/3 ">
-                        <div className="editortabs-container tabs glassmorphism min-h-screen">
+                className="w-full md:fixed md:top-0 md:right-0 md:w-1/2 lg:w-1/3 md:h-full ">
+                        <div className="editortabs-container tabs glassmorphism  h-full overflow-wrap text-wrap">
                             {/* {EditorTabs.map(
                                 (tab) => (
                                     //console.log(tab.name, tab),
