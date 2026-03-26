@@ -6,7 +6,7 @@ import { useSnapshot } from "valtio";
 const CustomList = ()=>{
     const snap = useSnapshot(state);
     const [gemColor, setgemColor] = useState("#50C878");
-     const [metalColor, setmetalColor] = useState("#fcc3fa");
+    const [metalColor, setmetalColor] = useState("#fcc3fa");
     const handleClick = (color)=>{
         // console.log("selected: ", color.name)
         // console.log("cur gemcor before update:", color.name, gemColor)
@@ -28,7 +28,7 @@ const CustomList = ()=>{
             <div 
                 className="customlist-h2" >
                 {/* list for gemstone selection */}
-                <div className="colorGroup flex flex-grow felx gap-4 justify-evenly ">
+                <div className="colorGroup flex flex-grow gap-4 ">
                     {gemStoneColors.map(
                         (selectGemcolor) =>{
                             const isSelected = gemColor===selectGemcolor.colorHex 
@@ -55,7 +55,7 @@ const CustomList = ()=>{
          <div className="customlist-h2" >
             {/* list for metal selection */}
                 <div
-                    className="colorGroup flex flex-grow felx gap-4 justify-evenly ">
+                    className="colorGroup flex flex-grow gap-4  ">
                     {metalColors.map(
                         (selectMetalcolor) =>{
                             const isSelected = metalColor===selectMetalcolor.colorHex 
@@ -78,8 +78,9 @@ const CustomList = ()=>{
                 </div>
             </div>
         
-        <h2> Choose a Design</h2>
-        <h2> Engrave Message?</h2>
+        <h2 className="customlist-h2" > Choose a Design</h2>
+        <div></div>
+        <h2 className="customlist-h2"> Engrave Message?</h2>
        </div>
     )
 }

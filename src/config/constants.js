@@ -15,6 +15,7 @@ export const EditorTabs = [
     icon: ai,
   },
 ];
+
 export const gemStoneColors = [
   {
     name: "green",
@@ -43,6 +44,7 @@ export const gemStoneColors = [
     colorHex: '#ff1493',
   },
 ];
+
 export const metalColors = [
   {
     name: "lilac",
@@ -85,3 +87,22 @@ export const DecalTypes = {
     filterTab: "stylishShirt",
   },
 };
+//Ring Design on Click Control
+export const RingDesigns = {
+
+  flower: {
+    path: '/FlowerRing.glb',
+    parts: {
+      metal: ['Metal_flower', 'Metal_g'],  // node names that use metal material
+      gem:   ['Gem'],                // node names that use gem material
+    }
+  },
+  classic: {
+    path: '/Round_ring.glb',
+    parts: {
+      metal: ['Metal'],  // node names that use metal material
+      gem:   ['Gem'],                // node names that use gem material
+    }
+  },
+
+}

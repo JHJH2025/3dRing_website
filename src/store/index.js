@@ -7,7 +7,7 @@ const state = proxy({
     color: '#fcc3fa',
     gemStoneColor:'#8DB600',
     metalColor:'#fcc3fa',
-    metalDesign:'',
+    metalDesign:'flower',
 
     isLogoTexture: false,
     isFullTexture: true,
