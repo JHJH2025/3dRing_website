@@ -8,24 +8,18 @@ import { easing } from "maath";
 
 const CustomRingDesign = ()=>{
     const snap = useSnapshot(state)
-    //add this temporarily to see what's happening
     // console.log('metalDesign value:', snap.metalDesign)
     // console.log('RingDesigns keys:', Object.keys(RingDesigns))
     // console.log('config:', RingDesigns[snap.metalDesign])
         const config = RingDesigns[snap.metalDesign]
         const {nodes, materials} = useGLTF(config.path)
-        console.log('nodes:', nodes)
-        //probrably something wrong here
+        //console.log('nodes:', nodes)
         const metalMaterial = materials['Metal_m']
         const gemMaterial = materials['Gem_m']
 
     //Extract path from each constant and preload
     Object.values(RingDesigns).forEach((path) => useGLTF.preload(path))
 
-    
-        
-    
-    
     //animation
     useFrame((_,delta)=>{
         if(metalMaterial) easing.dampC(metalMaterial.color, snap.metalColor, 0.25, delta)
@@ -38,6 +32,7 @@ const CustomRingDesign = ()=>{
         window.logNodes = ()=>console.log(nodes)
         window.logCamera = ()=>console.log('pos', camera.position, 'fov', camera.fov)
     }, [nodes, camera])
+    
     //Render all meshes from config(flatten all nodes)
     const allNodeNames = [
         ...config.parts.metal, 

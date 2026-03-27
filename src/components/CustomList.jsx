@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { gemStoneColors, metalColors } from "../config/constants";
+import { gemStoneColors, metalColors, RingDesigns } from "../config/constants";
 import state from "../store";
 import { useSnapshot } from "valtio";
+import DesignPicker from "./DesignPicker.jsx"
 
 const CustomList = ()=>{
-    const snap = useSnapshot(state);
+    const snap = useSnapshot(state);//just read from snap vs useState
     const [gemColor, setgemColor] = useState("#50C878");
     const [metalColor, setmetalColor] = useState("#fcc3fa");
+
     const handleClick = (color)=>{
         // console.log("selected: ", color.name)
         // console.log("cur gemcor before update:", color.name, gemColor)
@@ -14,12 +16,18 @@ const CustomList = ()=>{
         state.gemStoneColor = color.colorHex//update the global proxy state
         console.log("state.gemStoneColor: ",state.gemStoneColor)
     }
-       const handleMetalClick = (color)=>{
+    const handleMetalClick = (color)=>{
         // console.log("selected: ", color.name)
         // console.log("cur gemcor before update:", color.name, gemColor)
         setmetalColor(color.colorHex)//local state for outline selected color
         state.metalColor = color.colorHex//update the global proxy state
     }
+    //Redundent
+    // const handleRingD_Click = (design)=>{
+    //     setringD(design.path)
+    //     state.metalDesign = design.key
+
+    // }
     
     return (
        <div
@@ -79,7 +87,9 @@ const CustomList = ()=>{
             </div>
         
         <h2 className="customlist-h2" > Choose a Design</h2>
-        <div></div>
+            <div className = "customlist-h2">
+                    <DesignPicker/>
+            </div>
         <h2 className="customlist-h2"> Engrave Message?</h2>
        </div>
     )
