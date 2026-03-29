@@ -6,28 +6,13 @@ import DesignPicker from "./DesignPicker.jsx"
 
 const CustomList = ()=>{
     const snap = useSnapshot(state);//just read from snap vs useState
-    const [gemColor, setgemColor] = useState("#50C878");
-    const [metalColor, setmetalColor] = useState("#fcc3fa");
-
+    
     const handleClick = (color)=>{
-        // console.log("selected: ", color.name)
-        // console.log("cur gemcor before update:", color.name, gemColor)
-        setgemColor(color.colorHex)//local state for outline selected color
         state.gemStoneColor = color.colorHex//update the global proxy state
-        console.log("state.gemStoneColor: ",state.gemStoneColor)
     }
     const handleMetalClick = (color)=>{
-        // console.log("selected: ", color.name)
-        // console.log("cur gemcor before update:", color.name, gemColor)
-        setmetalColor(color.colorHex)//local state for outline selected color
         state.metalColor = color.colorHex//update the global proxy state
     }
-    //Redundent
-    // const handleRingD_Click = (design)=>{
-    //     setringD(design.path)
-    //     state.metalDesign = design.key
-
-    // }
     
     return (
        <div
@@ -39,7 +24,7 @@ const CustomList = ()=>{
                 <div className="colorGroup flex flex-grow gap-4 ">
                     {gemStoneColors.map(
                         (selectGemcolor) =>{
-                            const isSelected = gemColor===selectGemcolor.colorHex 
+                            const isSelected = snap.gemStoneColor ===selectGemcolor.colorHex //read from snapshots
                             return(
                                 <input
                                     key = {selectGemcolor.name}
@@ -66,7 +51,7 @@ const CustomList = ()=>{
                     className="colorGroup flex flex-grow gap-4  ">
                     {metalColors.map(
                         (selectMetalcolor) =>{
-                            const isSelected = metalColor===selectMetalcolor.colorHex 
+                            const isSelected = snap.metalColor===selectMetalcolor.colorHex 
                             return(
                                 <input
                                     key = {selectMetalcolor.name}
