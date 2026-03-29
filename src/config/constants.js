@@ -1,4 +1,4 @@
-import { swatch, fileIcon, ai, logoShirt, stylishShirt,  } from "../assets";
+import { swatch, fileIcon, ai, logoShirt, stylishShirt,FlowerR, RoundR} from "../assets";
 
 export const EditorTabs = [
   {
@@ -96,7 +96,7 @@ export const RingDesigns = {
       metal: ['Metal_flower', 'Metal_g'],  // node names that use metal material
       gem:   ['Gem'],                // node names that use gem material
     }, 
-    pic: './assets/FlowerRing.jpg',
+    pic: FlowerR,
   },
   classic: {
     path: './Round_ring.glb',
@@ -104,7 +104,7 @@ export const RingDesigns = {
       metal: ['Metal'],  // node names that use metal material
       gem:   ['Gem'],                // node names that use gem material
     },
-    pic:'./assets/RoundRing.jpg', 
+    pic:RoundR, //so it access
   },
 
 }
