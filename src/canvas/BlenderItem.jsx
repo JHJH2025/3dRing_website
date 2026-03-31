@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from "react";
 import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Decal, useGLTF,useTexture } from "@react-three/drei";
 import state from "../store";
 import CustomRingDesign from '../components/CustomRingDesign'
+
 //only take care of the rendering of the model 
 const BlenderItem = () => {
     const snap = useSnapshot(state);
-    return <CustomRingDesign key = {snap.metalDesign}/>   
+    return <CustomRingDesign key = {snap.metalDesign}
+    />   
 }
 //flowering position
 

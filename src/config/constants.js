@@ -1,4 +1,4 @@
-import { swatch, fileIcon, ai, logoShirt, stylishShirt,FlowerR, RoundR} from "../assets";
+import { swatch, fileIcon, ai,FlowerR, RoundR} from "../assets";
 
 export const EditorTabs = [
   {
@@ -69,29 +69,18 @@ export const metalColors = [
 export const FilterTabs = [
   {
     name: "logoShirt",
-    icon: logoShirt,
   },
   {
     name: "stylishShirt",
-    icon: stylishShirt,
   },
 ];
 
-export const DecalTypes = {
-  logo: {
-    stateProperty: "logoDecal",
-    filterTab: "logoShirt",
-  },
-  full: {
-    stateProperty: "fullDecal",
-    filterTab: "stylishShirt",
-  },
-};
+
 //Ring Design on Click Control
 export const RingDesigns = {
 
   flower: {
-    path: '/FlowerRing.glb',
+    path: '/FlowerRingAfter.glb',
     parts: {
       metal: ['Metal_flower', 'Metal_g'],  // node names that use metal material
       gem:   ['Gem'],                // node names that use gem material

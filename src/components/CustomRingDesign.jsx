@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import {RingDesigns, metalColors} from "../config/constants";
 import state from "../store";
 import { useSnapshot } from "valtio";
-import { useGLTF } from "@react-three/drei";
+import { Gltf, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { easing } from "maath";
+import { Vector3, Quaternion, Euler } from 'three'
 
 const CustomRingDesign = ()=>{
     const snap = useSnapshot(state)
@@ -14,6 +15,7 @@ const CustomRingDesign = ()=>{
         const config = RingDesigns[snap.metalDesign]
         const {nodes, materials} = useGLTF(config.path)
         //console.log('nodes:', nodes)
+
         const metalMaterial = materials['Metal_m']
         const gemMaterial = materials['Gem_m']
 
@@ -31,6 +33,7 @@ const CustomRingDesign = ()=>{
     useEffect(()=>{
         window.logNodes = ()=>console.log(nodes)
         window.logCamera = ()=>console.log('pos', camera.position, 'fov', camera.fov)
+        
     }, [nodes, camera])
     
     //Render all meshes from config(flatten all nodes)
@@ -45,13 +48,19 @@ const CustomRingDesign = ()=>{
             {allNodeNames.map(
                 (nodeName) =>{
                     const node = nodes[nodeName]
+
                     if(!node){
                         console.warn(`Node "${nodeName}" not found in ${config.path}`)
                         return null
                     }
+
                     //determin what materials asign to mesh by checking constant 
                     const isMetal = config.parts.metal.includes(nodeName)
                     const mat = isMetal?metalMaterial:gemMaterial
+                    //fix flowering position problem:appply full world matrix Parent: true, Children: false
+                    //node.updateMatrixWorld(true, false)
+                    
+            
                     return(
                         <mesh
                         key = {nodeName}
@@ -62,6 +71,7 @@ const CustomRingDesign = ()=>{
                         position = {node.position}
                         rotation = {node.rotation}
                         scale={node.scale}
+                        
                         />
                     )
                 }
