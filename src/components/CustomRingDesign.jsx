@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {RingDesigns, metalColors} from "../config/constants";
 import state from "../store";
 import { useSnapshot } from "valtio";
-import { Gltf, useGLTF } from "@react-three/drei";
+import { Gltf, MeshRefractionMaterial, useEnvironment, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { easing } from "maath";
 import { Vector3, Quaternion, Euler } from 'three'
+import GemMesh from "./GemMesh";
 
 const CustomRingDesign = ()=>{
     const snap = useSnapshot(state)
-    // console.log('metalDesign value:', snap.metalDesign)
-    // console.log('RingDesigns keys:', Object.keys(RingDesigns))
-    // console.log('config:', RingDesigns[snap.metalDesign])
         const config = RingDesigns[snap.metalDesign]
         const {nodes, materials} = useGLTF(config.path)
-        //console.log('nodes:', nodes)
 
         const metalMaterial = materials['Metal_m']
-        const gemMaterial = materials['Gem_m']
-
+        const gemRef = useRef()
+    
+       
     //Extract path from each constant and preload
-    Object.values(RingDesigns).forEach((path) => useGLTF.preload(path))
+    Object.values(RingDesigns).forEach((design) => useGLTF.preload(design.path))
 
     //animation
     useFrame((_,delta)=>{
         if(metalMaterial) easing.dampC(metalMaterial.color, snap.metalColor, 0.25, delta)
-        if(gemMaterial) easing.dampC(gemMaterial.color, snap.gemStoneColor, 0.25,delta)
     })
 
     //debug
@@ -56,22 +53,23 @@ const CustomRingDesign = ()=>{
 
                     //determin what materials asign to mesh by checking constant 
                     const isMetal = config.parts.metal.includes(nodeName)
-                    const mat = isMetal?metalMaterial:gemMaterial
-                    //fix flowering position problem:appply full world matrix Parent: true, Children: false
-                    //node.updateMatrixWorld(true, false)
-                    
             
-                    return(
+                    return isMetal?(
                         <mesh
                         key = {nodeName}
                         castShadow
                         geometry={node.geometry}
-                        material={mat}
-                        material-roughness = {isMetal? 0.2:0.6}
+                        material={metalMaterial}
+                        material-roughness = {0.2}
                         position = {node.position}
                         rotation = {node.rotation}
                         scale={node.scale}
-                        
+                        />
+                    ):(
+                        //Gem  meshes
+                        <GemMesh
+                        key = {nodeName}
+                        node ={node}
                         />
                     )
                 }

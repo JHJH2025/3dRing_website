@@ -16,20 +16,20 @@ const Home = () =>{
        <AnimatePresence>
         {snap.intro && (
             <motion.section className='home'{...slideAnimation('left')}>
-                <motion.header>
+                {/* <motion.header>
                     <img src = './threejs.png' alt='logo'className='w-8 h-8 object-contain'
                     />
-                </motion.header>
+                </motion.header> */}
 
                 <motion.div className='home-content' {...headContainerAnimation}>
                     <h1 className='head-text'>
-                    LET'S <br className='xl:block hidden' /> DO IT.
+                    YOUR RING<br className='xl:block hidden' /> 
                     </h1>
                 </motion.div>
 
                 <motion.div {...headContentAnimation} className='flex flex-col gap-5'>
-                    <p className='max-w-md font-normal text-blue-600 text-base'>
-                    Create your unique and exclusive item with our brand-new 3D customization tool.  
+                    <p className='max-w-md font-normal text-black-600 text-base'>
+                    Create your unique and exclusive Ring with our brand-new 3D customization tool.  
                     <strong>
                         Unleash your imagination
                     </strong>{" "}

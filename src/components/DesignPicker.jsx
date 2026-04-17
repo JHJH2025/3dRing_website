@@ -17,7 +17,7 @@ const DesignPicker = () =>{
                             className={`cursor-pointer h-24 w-1/3 ${isSelected ? 'outline outline-offset-2' : ''}`}
                         >
                         <img 
-                            className=''
+                            className='h-full w-full'
                             src = {design.pic}
                         />
                         </div>

@@ -1,4 +1,4 @@
-import { swatch, fileIcon, ai,FlowerR, RoundR} from "../assets";
+import { swatch, fileIcon, ai,FlowerR, RoundR, OvalR} from "../assets";
 
 export const EditorTabs = [
   {
@@ -94,6 +94,14 @@ export const RingDesigns = {
       gem:   ['Gem'],                // node names that use gem material
     },
     pic:RoundR, //so it access
+  },
+  oval: {
+    path: './LastRing.glb',
+    parts: {
+      metal: ['Metal'],  // node names that use metal material
+      gem:   ['Gem_l','Gem_M','Gem_r'],                // node names that use gem material
+    },
+    pic:OvalR, //so it access
   },
 
 }
