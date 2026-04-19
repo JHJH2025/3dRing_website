@@ -8,4 +8,5 @@ import FlowerR from "./FlowerRing.jpg";
 import RoundR from "./RoundRing.jpg";
 import OvalR from "./LastRing.jpg";
 
-export { ai, fileIcon, swatch, download, FlowerR,RoundR, OvalR };
+
+export { ai, fileIcon, swatch, download, FlowerR,RoundR, OvalR};

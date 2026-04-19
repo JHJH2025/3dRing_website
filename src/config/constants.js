@@ -48,11 +48,11 @@ export const gemStoneColors = [
 export const metalColors = [
   {
     name: "lilac",
-    colorHex: '#fcc3fa',
+    colorHex: '#fda0fa',
   },
   {
     name: "silver",
-    colorHex: '#e9e6e6',
+    colorHex: '#b6c0c1',
   },
   
   {

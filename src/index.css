@@ -1,12 +1,26 @@
 @import "tailwindcss";
 
 
+
 .head-text {
   @apply xl:text-[10rem] text-[6rem] xl:leading-[11rem] leading-[7rem] font-black text-black;
 }
 .editortabs-container{
   /* the customized list */
-   @apply w-full rounded-lg flex flex-col items-center py-8 outline;
+   @apply w-full rounded-lg flex flex-col items-center p-6;
+}
+.editortabs-container::before{
+   content: '';
+   position:absolute;
+   inset:0;
+   background-image:url('./assets/paper.jpg');
+   background-position: center;
+   background-size: cover;
+   opacity: 0.5;
+}
+.editortabs-container > *{
+  position: relative;
+  z-index: 1;
 }
 
 .glassmorphism {
@@ -28,7 +42,7 @@
   font-style: normal;
 }
 .customlist-text{
-  @apply xl:text-[4rem] text-[3rem] text-[#3b3b3b];
+  @apply xl:text-[3.5rem] text-[3rem] text-[#3b3b3b];
   font-family: 'BrotherSignature', cursive;
 }
 .customlist-h2{
@@ -37,6 +51,6 @@
 .colorGroup{
   @apply text-base font-sans decoration-red-50;
 }
-.colorSelection{
+/* .colorSelection{
   @apply appearance-none w-4 h-4 border-2 bg-gray-50 rounded-lg;
-}
+} */

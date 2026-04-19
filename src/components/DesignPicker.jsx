@@ -6,7 +6,8 @@ const DesignPicker = () =>{
     const snap = useSnapshot(state)
 
     return(
-        <div>
+        <div
+            className='flex justify-between gap-2'>
             {Object.entries(RingDesigns).map(
                 ([k, design]) =>{
                     const isSelected = snap.metalDesign === k
@@ -14,10 +15,10 @@ const DesignPicker = () =>{
                         <div
                             key = {k}
                             onClick={() => state.metalDesign = k}
-                            className={`cursor-pointer h-24 w-1/3 ${isSelected ? 'outline outline-offset-2' : ''}`}
+                            className={`cursor-pointer max-h-full w-full p-1 rounded-md content-center ${isSelected ? 'outline outline-offset-2' : ''}`}
                         >
                         <img 
-                            className='h-full w-full'
+                            className='h-full w-full rounded-lg'
                             src = {design.pic}
                         />
                         </div>
